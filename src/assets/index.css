@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@500&display=swap");
+@use "sass:map";
+body {
+  background-color: 'default';
+  border-collapse: collapse;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+#icon {
+  background-color: plum;
+  width: 100px;
+  height: 100px;
+}
+/*# sourceMappingURL=index.css.map */

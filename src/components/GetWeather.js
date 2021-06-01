@@ -1,89 +1,68 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { setWeather } from '../actions/weatherAction';
-import { useState, useEffect } from 'react';
-import Weather from './weather';
+// import { useSelector } from 'react-redux';
+// import { setWeather } from '../actions/weatherAction';
+// import { useState, useEffect } from 'react';
+// import { Link } from 'react-router-dom';
+// import Weather from './Weather';
+// import Search from '../views/Search';
+// import Splash from '../views/Splash';
 
-function GetWeather() {
-	console.log('what up yo?'); // 1. Logs
+// function GetWeather() {
+// console.log('From GetWeather:', document.getElementById('temp')); // 1. Logs
 
-	const dispatch = useDispatch();
+// const dispatch = useDispatch();
 
-	const weather = useSelector((state) => state.weather);
+// const weather = useSelector((state) => state.weather);
 
-	const [query, setQuery] = useState('Gothenburg');
+// const [query, setQuery] = useState('');
 
-	console.log('Weather:', weather); // 2. Logs an empty object as expected
+// let search = useSelector((state) => state.search);
 
-	async function fetchWeather() {
-		console.log('fetching'); // 4. Does not log!
-		const response = await fetch(
-			`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=1dc27327c1655e53a85e6e5a889fccee`
-		);
-		console.log('response:', response);
-		const data = await response.json();
-		console.log('data:', data);
-		dispatch(setWeather(data));
-	}
+// let location = 'Göteborg';
 
+// let searchSwitch = () => (search = !search);
 
-	/*const fetchWeather = useCallback(() => {
+// console.log('Weather:', weather); // 2. Logs an empty object as expected
+
+/*const fetchWeather = useCallback(() => {
     console.log('fetching'); // 4. Does not log!
     return fetch('https://api.openweathermap.org/data/2.5/weather?q=stockholm&appid=1dc27327c1655e53a85e6e5a889fccee')
       .then(response => response.json())
         .then(data => dispatch(setWeather(data)));
   }, [dispatch])*/
 
-	useEffect(() => {
-		console.log('useEffect: ', weather);
-	}, [weather]);
+//  useEffect(() => {
+//    console.log('calling fetch'); // 3. Does not log!
+//    fetchWeather();
+// }, []);
 
-  useEffect(() => {
-    console.log(query);
-  }, [query]);
+// return (
+// <main className="view">
+// 	<header>
+//     <img src="../assets/img/svg/logo.svg" alt="Weather App logotype" className="iconsSmall" />
+//     {search ?
+// 			<img src="../assets/img/svg/geolocation.svg" alt="Geolocation icon" className="iconsSmall" /> :
+// 			<img src="../assets/img/svg/search-icon.svg" alt="Search icon" onClick={ searchButton } />}
+//   </header>
+// 	{search ? <Search /> : <Weather weather={weather} />}
+// </main>
 
-	//  useEffect(() => {
-	//    console.log('calling fetch'); // 3. Does not log!
-	//    fetchWeather();
-	// }, []);
+// 		<main>
+// 			<header>
+// 				<img src="../assets/img/svg/logo.svg" alt="App logotype" />
+// 				{search ? (
+// 					<img src="../assets/img/svg/geolocation.svg" alt="Geolocation icon" />
+// 				) : (
+// 					<img src="../assets/img/svg/search-icon.svg" alt="Search icon" />
+// 				)}
+// 			</header>
+// 		</main>
+// 	);
+// }
 
-	return (
-		<main>
-			{weather.coord ? (
-				<Weather weather={weather} />
-			) : (
-				<p>Awaiting fetch data</p>
-			)}
-				<input
-					id="location"
-					type="text"
-					className="search-bar"
-					placeholder="Search..."
-					onChange={(e) => setQuery(e.target.value)}
-				/>
-			 {/* <input type="submit" value="Search" onSubmit={fetchWeather} />  */}
-			<button onClick={fetchWeather}>Search!</button>
-		</main>
-	);
-}
-
-export default GetWeather;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// export default GetWeather;
 
 // switch (weather.description) {
- 
+
 //   case 'clear sky':
 //     document.body.style.backgroundImage = "url('bilder/7c.jpg')"
 //     break

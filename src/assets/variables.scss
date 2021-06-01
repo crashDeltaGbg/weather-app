@@ -1,0 +1,12 @@
+@use 'sass:map';
+
+$background-color: (
+	'default': #63c7ff,
+	'clear': #3fb3f4,
+	'partial': #3dacea,
+	'cloudy': #2798d7,
+	'foggy': #298ec7,
+	'dark-clouds': #1674a9,
+	'rain': #115a83,
+	'snow': #0f4665
+);
